@@ -9,6 +9,6 @@ RUN echo "deb https://emdebian.metrotek.center jessie main extra" >> /etc/apt/so
 RUN wget -qO - https://emdebian.metrotek.center/emdebian-toolchain-archive.key | apt-key add -
 
 RUN apt-get update -y
-RUN apt-get install -y dpkg-cross crossbuild-essential-armhf
+RUN apt-get install -y dpkg-cross crossbuild-essential-armhf debhelper dh-autoreconf pkg-config pkg-config:armhf
 
 ENTRYPOINT ["/bin/bash"]
